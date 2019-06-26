@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms"  
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="clndr.Views.LoginView.Styles" 
+    xmlns:control="clr-namespace:clndr.Controls"
+    xmlns:gradient ="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" 
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms">
+    
+    <Color x:Key="EverbridgeRed">#CF2029</Color>
+    <Color x:Key="EverbridgeOrange">#F07324</Color>
+    <Color x:Key="DarkText">#515151</Color>
+    <Color x:Key="GrayText">#959595</Color>
+    <Color x:Key="LightText">#FFFFFF</Color>
+    
+    <!--Common style for content pages-->
+    <Style x:Key="ContentPageStyle" TargetType="ContentPage">
+        <Setter Property="BackgroundImage">
+            <OnPlatform x:TypeArguments="x:String" Android="LoginBackground.png" WinPhone="LoginBackground.png"/>
+        </Setter>
+    </Style>
+    
+    <!--Common style for labels-->
+    <Style x:Key="LabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource ForegroundTextColor}" />
+        <Setter Property="FontFamily" Value="Helvetica" />
+        <Setter Property="FontSize" Value="14" />
+    </Style>
+    
+    <!--Common style for entries-->
+    <Style x:Key="EntryStyle" TargetType="control:BorderlessEntry">
+        <Setter Property="PlaceholderColor" Value="{StaticResource EntryPlaceholderColor}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="TextColor" Value="{StaticResource ForegroundTextColor}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Margin" Value="15,0" />
+        <Setter Property="HeightRequest" Value="40"/>
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="ReturnType" Value="Done"/>
+    </Style>
+    
+    <!--Common style for buttons-->
+    <Style x:Key="SfButtonStyle" TargetType="buttons:SfButton">
+        <Setter Property="BackgroundColor" Value="{StaticResource ButtonBackgroundColor}" />
+        <Setter Property="TextColor" Value="{StaticResource ForegroundTextColor}" />
+        <Setter Property="FontFamily" Value="Helvetica" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="CornerRadius" Value="20" />
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="{StaticResource ButtonBackgroundColor}" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState x:Name="Pressed">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="#EB2B3D"/>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+    
+    <!--Common style for flat buttons-->
+    <Style x:Key="SfFlatButtonStyle" TargetType="buttons:SfButton">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="TextColor" Value="{StaticResource ButtonBackgroundColor}" />
+        <Setter Property="FontFamily" Value="Helvetica" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+    </Style>
+    
+    <!--Common style for borders-->
+    <Style x:Key="SfBorderStyle" TargetType="border:SfBorder">
+        <Setter Property="BackgroundColor" Value="{StaticResource BorderBackgroundColor}" />
+        <Setter Property="BorderColor" Value="Transparent" />
+        <Setter Property="CornerRadius" Value="20" />
+        <Setter Property="BorderWidth" Value="1"/>
+    </Style>
+    
+    <!--Common style for gradient view-->
+    <Style x:Key="SfGradientViewStyle" TargetType="gradient:SfGradientView">
+        <Setter Property="Opacity" Value="0.82"/>
+        <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="BackgroundBrush">
+            <Setter.Value>
+                <gradient:SfLinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
+                    <gradient:SfLinearGradientBrush.GradientStops>
+                        <gradient:SfGradientStop Color="{StaticResource GradientStartColor}" Offset="0.0" />
+                        <gradient:SfGradientStop Color="{StaticResource GradientEndColor}" Offset="1.0" />
+                    </gradient:SfLinearGradientBrush.GradientStops>
+                </gradient:SfLinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

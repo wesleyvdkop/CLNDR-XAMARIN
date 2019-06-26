@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            x:Class="clndr.Views.TabNavigation"
+            xmlns:views="clr-namespace:clndr.Views"
+            BarBackgroundColor="#FFFFFF" 
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom">
+    <!--Pages can be added as references or inline-->
+    
+    <TabbedPage.Children>
+        <NavigationPage Title="Calendar" Icon="ic_action_calendar_today.png">
+            <x:Arguments>
+                <views:CalendarView />
+            </x:Arguments>
+        </NavigationPage>
+        
+        <NavigationPage Title="Event" Icon="ic_action_add_circle.png">
+            <x:Arguments>
+                <views:CreateEventView />
+            </x:Arguments>
+        </NavigationPage>
+        
+        <NavigationPage Title="Profile" Icon="ic_action_face.png">
+            <x:Arguments>
+                <views:ProfileView />
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
+</TabbedPage>

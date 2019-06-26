@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="clndr.Views.CalendarView" 
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms"
+             xmlns:list="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             xmlns:syncTheme="clr-namespace:Syncfusion.XForms.Themes;assembly=Syncfusion.Core.XForms"
+             xmlns:local="clr-namespace:clndr.Repositories"
+             BackgroundColor="#FAFAFA">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="35, 45, 35, 0" Default="35, 0, 35, 0" />
+    </ContentPage.Padding>
+    
+    <ContentPage.BindingContext>
+        <local:EventListItemRepository/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <syncTheme:LightTheme />
+                <syncfusion:SfCalendarStyles />
+                <ResourceDictionary>
+                    <Color x:Key="SfCalendarInlineBackgroundColor">#FAFAFA</Color>
+                    <Color x:Key="SfCalendarWeekDayBackgroundColor">#FAFAFA</Color>
+                    <Color x:Key="SfCalendarDisabledBackgroundColor">#FAFAFA</Color>
+                    <Color x:Key="SfCalendarPreviousMonthBackgroundColor">#FAFAFA</Color>
+                    <Color x:Key="SfCalendarCurrentMonthBackgroundColor">#FAFAFA</Color>
+                    <Color x:Key="SfCalendarDayHeaderBackgroundColor">#FAFAFA</Color>
+                    <Color x:Key="SfCalendarWeekEndBackgroundColor">#FAFAFA</Color>
+                    <Color x:Key="SfCalendarHeaderBackgroundColor">#FAFAFA</Color>
+                    <Color x:Key="SfCalendarYearViewLayoutBackground">#FAFAFA</Color>
+                    <Color x:Key="SfCalendarYearViewHeaderBackground">#FAFAFA</Color>
+                    <Color x:Key="SfCalendarYearViewMonthLayoutBackground">#FAFAFA</Color>
+                    <Color x:Key="SfCalendarYearViewMonthHeaderBackground">#FAFAFA</Color>
+                    <Color x:Key="SfCalendarDateSelectionColor">#CF2029</Color>
+                    <Color x:Key="SfCalendarSelectedDayTextColor">#FFFFFF</Color>
+                    <Color x:Key="SfCalendarPreviousMonthTextColor">#858585</Color>
+                    <Color x:Key="SfCalendarCurrentMonthTextColor">#515151</Color>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout VerticalOptions="FillAndExpand" 
+                         HorizontalOptions="FillAndExpand">
+                <syncfusion:SfCalendar x:Name="calendar"
+                                       OnDateCellHolding="Handle_OnDateCellHolding"/>   
+            </StackLayout>
+            <Label Text="Today" 
+                   TextColor="#515151" 
+                   Font="Medium,18"
+                   FontFamily="Source Sans Pro" 
+                   HorizontalOptions="Start"/>
+            
+            <list:SfListView x:Name="listView" 
+                             ItemsSource="{Binding EventListItem}"
+                             ItemSize="65" 
+                             ItemSpacing="0, 16, 0, 0"
+                             SelectionMode ="None"> 
+                
+                <list:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="2" Margin="2" >
+                            <border:SfBorder HasShadow="true"
+                                             BorderColor="#FFFFFF"
+                                             CornerRadius="15"
+                                             ShadowColor="#E6E6E6">
+                                <Frame x:Name="frame"
+                                       CornerRadius="15"
+                                       BackgroundColor="#FFF" 
+                                       HasShadow="false">
+                                <StackLayout>
+                                        <Label Text="{Binding EventType}" 
+                                               FontAttributes="Bold"
+                                               TextColor="#979797" 
+                                               FontSize="12"/>
+                                        <Label Text="{Binding EventDesc}" 
+                                               FontAttributes="Bold"
+                                               TextColor="#515151" 
+                                               FontSize="14" 
+                                               VerticalOptions="CenterAndExpand"/>
+                                </StackLayout>
+                                </Frame>
+                            </border:SfBorder>
+                        </Grid>
+                    </DataTemplate>
+                </list:SfListView.ItemTemplate>
+            </list:SfListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

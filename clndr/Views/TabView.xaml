@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:tabView="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms"
+             x:Class="clndr.Views.TabView">
+    <ContentPage.Content> 
+        <tabView:SfTabView>
+            <tabView:SfTabItem Title="Call">
+                <tabView:SfTabItem.Content>
+                    <StackLayout>
+                        <Grid BackgroundColor="Green" />
+                        <Button Text="Contacts" WidthRequest="300" />
+                        <Button Text="Location" WidthRequest="300" />
+                        <Button Text="Email" WidthRequest="300" />
+                    </StackLayout>
+                </tabView:SfTabItem.Content>
+            </tabView:SfTabItem>
+            <tabView:SfTabItem Title="Test">
+                <tabView:SfTabItem.Content>
+                    <StackLayout>
+                        <Grid BackgroundColor="Green" />
+                        <Button Text="Test" WidthRequest="300" />
+                        <Button Text="Okay" WidthRequest="300" />
+                        <Button Text="Five" WidthRequest="300" />
+                    </StackLayout>
+                </tabView:SfTabItem.Content>
+            </tabView:SfTabItem>
+        </tabView:SfTabView> 
+    </ContentPage.Content>  
+</ContentPage>

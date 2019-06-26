@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:dataForm="clr-namespace:Syncfusion.XForms.DataForm;assembly=Syncfusion.SfDataForm.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" 
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfPicker.XForms;assembly=Syncfusion.SfPicker.XForms"
+             xmlns:local="clr-namespace:clndr.Models"
+             x:Class="clndr.Views.CreateEventView" 
+             BackgroundColor="#FAFAFA">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="35, 45, 35, 0" Default="35, 0, 35, 0" />
+    </ContentPage.Padding>
+    
+    <ContentPage.BindingContext>
+        <local:CreateEventModel/>
+    </ContentPage.BindingContext> 
+    
+    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        
+        <StackLayout
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand">
+
+                <inputLayout:SfTextInputLayout
+                    Hint="Date" 
+                    x:Name="dateField"
+                    FocusedColor="#515151"
+                    ContainerBackgroundColor="#FFFFFF"
+                    ErrorText="Something is not correct here!" 
+                    HelperText="Required *">
+                <DatePicker x:Name="date"/>
+                </inputLayout:SfTextInputLayout>
+                
+                <inputLayout:SfTextInputLayout
+                    Hint="Type" 
+                    x:Name="typeField"
+                    FocusedColor="#515151"
+                    ContainerBackgroundColor="#FFFFFF" 
+                    Margin="0, 16, 0, 0"
+                    ErrorText="Something is not correct here!" 
+                    HelperText="Required *">
+                   <Entry x:Name="type" />
+                </inputLayout:SfTextInputLayout>
+            
+                <inputLayout:SfTextInputLayout
+                    Hint="Description" 
+                    x:Name="descField"
+                    FocusedColor="#515151"
+                    ContainerBackgroundColor="#FFFFFF" 
+                    Margin="0, 16, 0, 0"
+                    ErrorText="Something is not correct here!" 
+                    HelperText="Required *">
+                   <Entry x:Name="desc" />
+                </inputLayout:SfTextInputLayout>
+            
+             <buttons:SfButton x:Name="SfButton" 
+                          Text="Create event" 
+                          CornerRadius="15" 
+                          HasShadow="true"
+                          BackgroundColor="#CF2029"
+                          TextColor="#FFFFFF"
+                          FontSize="16"
+                          FontFamily="Source Sans Pro"
+                          HeightRequest="65" 
+                          Clicked="Handle_Create_Clicked" 
+                          Margin="0, 32, 0, 0"/>
+        </StackLayout>
+        
+       
+    </StackLayout>
+</ContentPage>
