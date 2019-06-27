@@ -1,5 +1,6 @@
 ﻿using clndr.Api;
 using clndr.Api.Models;
+using clndr.Models;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using RestSharp;
@@ -10,6 +11,7 @@ namespace clndr.UnitTest
     public class CalendarEvent
     {
         private ApiClient apiClient = new ApiClient();
+        private CreateEventModel createEventModel = new CreateEventModel();
         private RestClient _client;
 
         public CalendarEvent()
@@ -31,12 +33,11 @@ namespace clndr.UnitTest
             var officeId = "5c9cc5e521b8387d32991a5c";
 
             // Act
-            var createdEvent = apiClient.CreateCalendarEvent(officeId, calendarEvent);
-            string json = JsonConvert.SerializeObject(createdEvent);
+            var returnedEvent = createEventModel.CreateCalendarEvent(calendarEvent);
 
 
             // Assert
-            Assert.AreEqual(json, json);
+            Assert.IsTrue(returnedEvent);
         }
 
         [Test()]

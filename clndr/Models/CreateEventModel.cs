@@ -41,15 +41,19 @@ namespace clndr.Models
             Types.Add("Other");
         }
 
-        public void CreateCalendarEvent(CalendarCreateDto calendarCreateEvent)
+        public bool CreateCalendarEvent(CalendarCreateDto calendarCreateEvent)
         {
             try
             {
                 apiClient.CreateCalendarEvent("5c9cc5e521b8387d32991a5c", calendarCreateEvent);
-            }
-            catch
-            {
 
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("{0} Exception caught.", e);
+
+                return false;
             }
         }
     }

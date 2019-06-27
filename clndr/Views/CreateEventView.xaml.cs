@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using clndr.Api;
 using clndr.Api.Models;
 using clndr.DataModels;
+using clndr.Models;
 using Newtonsoft.Json;
 using Xamarin.Forms;
 
@@ -14,6 +15,7 @@ namespace clndr.Views
 
         private ApiClient apiClient = new ApiClient();
         private CalendarCreateDto calendarCreateEvent;
+        private CreateEventModel createEventModel = new CreateEventModel();
 
         public CreateEventView()
         {
@@ -40,7 +42,7 @@ namespace clndr.Views
                     Day = true
                 };
 
-                apiClient.CreateCalendarEvent("5c9cc5e521b8387d32991a5c", calendarCreateEvent);
+                createEventModel.CreateCalendarEvent(calendarCreateEvent);
 
                 dateField.HasError = false;
                 typeField.HasError = false;

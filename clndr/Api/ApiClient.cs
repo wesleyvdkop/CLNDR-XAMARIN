@@ -14,7 +14,7 @@ namespace clndr.Api
 
         public ApiClient()
         {
-            _client = new RestClient("https://54dd727d.ngrok.io/v1");
+            _client = new RestClient("https://4a60a5a4.ngrok.io/v1");
         }
 
         private Task<T> AsyncCall<T>(string url, Method method) where T : new()
