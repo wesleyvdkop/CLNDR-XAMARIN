@@ -6,6 +6,7 @@
              xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
              xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
              xmlns:syncfusion="clr-namespace:Syncfusion.SfPicker.XForms;assembly=Syncfusion.SfPicker.XForms"
+             xmlns:numericBox="clr-namespace:Syncfusion.SfNumericTextBox.XForms;assembly=Syncfusion.SfNumericTextBox.XForms"
              xmlns:local="clr-namespace:clndr.Models"
              x:Class="clndr.Views.CreateEventView" 
              BackgroundColor="#FAFAFA">
@@ -41,7 +42,7 @@
                     Margin="0, 16, 0, 0"
                     ErrorText="Something is not correct here!" 
                     HelperText="Required *">
-                   <Entry x:Name="type" />
+                        <Entry x:Name="type"/>
                 </inputLayout:SfTextInputLayout>
             
                 <inputLayout:SfTextInputLayout

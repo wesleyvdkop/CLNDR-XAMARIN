@@ -24,7 +24,6 @@ namespace clndr.Views
         {
             var emailValue = email.Text;
             var passwordValue = password.Text;
-            await Navigation.PushAsync(new TabNavigation());
 
             if ( (emailValue == userEmail) && (passwordValue == userPassword))
             {

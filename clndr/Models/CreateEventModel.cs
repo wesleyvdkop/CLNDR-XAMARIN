@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using clndr.Api;
+using clndr.Api.Models;
 using clndr.DataModels;
 
 namespace clndr.Models
 {
     public class CreateEventModel
     {
+        private ApiClient apiClient = new ApiClient();
+
         private CreateEventData createEventData;
         public CreateEventData CreateEventData
         {
@@ -35,6 +39,18 @@ namespace clndr.Models
             Types.Add("Out of Office");
             Types.Add("Holiday");
             Types.Add("Other");
+        }
+
+        public void CreateCalendarEvent(CalendarCreateDto calendarCreateEvent)
+        {
+            try
+            {
+                apiClient.CreateCalendarEvent("5c9cc5e521b8387d32991a5c", calendarCreateEvent);
+            }
+            catch
+            {
+
+            }
         }
     }
 }

@@ -142,7 +142,7 @@
                         </border:SfBorder>
                     </StackLayout>
                     
-                    <StackLayout Grid.Row="1">
+                    <StackLayout Grid.Row="1" Padding="0,0,0,16">
                         <Label
                            Text="Upcoming events"
                            FontAttributes="Bold"
@@ -160,7 +160,7 @@
                             <list:SfListView.ItemTemplate>
                                 <DataTemplate>
                                     <Grid BackgroundColor="#FFFFFF" 
-                                          VerticalOptions="FillAndExpand">
+                                          VerticalOptions="FillAndExpand" Padding="5">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="*" />
                                             <RowDefinition Height="*" />

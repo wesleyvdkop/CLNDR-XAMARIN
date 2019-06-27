@@ -33,7 +33,7 @@ namespace clndr.Repositories
             command.Execute(null);
         }
 
-        internal async System.Threading.Tasks.Task GenerateEventsAsync()
+        public async System.Threading.Tasks.Task GenerateEventsAsync()
         {
             eventListItem.Clear();
             calendarEvents = await apiClient.GetTodaysCalendarEvents("5c9cc5e521b8387d32991a5c");

@@ -22,7 +22,7 @@ namespace clndr
 
             //var content = new LoginView();
             //MainPage = new NavigationPage(content);
-            MainPage = new NavigationPage(new LoginView());
+            MainPage = new NavigationPage(new TabNavigation());
         }
 
         protected override void OnStart()

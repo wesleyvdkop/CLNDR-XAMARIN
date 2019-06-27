@@ -25,6 +25,7 @@
     <PackageReference Include="Syncfusion.Xamarin.SfPicker" Version="17.1.0.53" />
     <PackageReference Include="RestSharp" Version="106.6.9" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Syncfusion.Xamarin.SfNumericTextBox" Version="17.1.0.53" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -57,5 +58,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Xamarin.Android.framework\Versions\9.3.0-23\lib\xamarin.android\xbuild-frameworks\MonoAndroid\v9.0\Mono.Android.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

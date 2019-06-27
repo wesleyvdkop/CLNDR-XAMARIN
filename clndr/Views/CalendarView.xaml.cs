@@ -7,9 +7,13 @@ namespace clndr.Views
 {
     public partial class CalendarView : ContentPage
     {
+
+        private Repositories.EventListItemRepository eventListItemRepository;
+
         public CalendarView()
         {
             InitializeComponent();
+            eventListItemRepository = new Repositories.EventListItemRepository();
 
             NavigationPage.SetHasNavigationBar(this, false);
         }

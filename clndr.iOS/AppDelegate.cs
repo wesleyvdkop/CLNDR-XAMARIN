@@ -6,6 +6,7 @@ using Foundation;
 using SVG.Forms.Plugin.iOS;
 using Syncfusion.ListView.XForms.iOS;
 using Syncfusion.SfCalendar.XForms.iOS;
+using Syncfusion.SfNumericTextBox.XForms.iOS;
 using Syncfusion.SfPicker.XForms.iOS;
 using Syncfusion.XForms.iOS.Buttons;
 using Syncfusion.XForms.iOS.DataForm;
@@ -32,6 +33,7 @@ namespace clndr.iOS
             Xamarin.Calabash.Start();
             global::Xamarin.Forms.Forms.Init();
             SvgImageRenderer.Init();
+            new SfNumericTextBoxRenderer();
             LoadApplication(new App());
 
             SfButtonRenderer.Init();

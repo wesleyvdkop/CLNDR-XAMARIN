@@ -64,7 +64,7 @@
                 
                 <list:SfListView.ItemTemplate>
                     <DataTemplate>
-                        <Grid Padding="2" Margin="2" >
+                        <Grid Padding="2" Margin="2">
                             <border:SfBorder HasShadow="true"
                                              BorderColor="#FFFFFF"
                                              CornerRadius="15"
@@ -73,7 +73,7 @@
                                        CornerRadius="15"
                                        BackgroundColor="#FFF" 
                                        HasShadow="false">
-                                <StackLayout>
+                                <StackLayout VerticalOptions="CenterAndExpand">
                                         <Label Text="{Binding EventType}" 
                                                FontAttributes="Bold"
                                                TextColor="#979797" 
@@ -81,8 +81,7 @@
                                         <Label Text="{Binding EventDesc}" 
                                                FontAttributes="Bold"
                                                TextColor="#515151" 
-                                               FontSize="14" 
-                                               VerticalOptions="CenterAndExpand"/>
+                                               FontSize="14" />
                                 </StackLayout>
                                 </Frame>
                             </border:SfBorder>

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Net;
 using System.Threading.Tasks;
 using clndr.Api.Models;
 using RestSharp;
@@ -38,6 +40,25 @@ namespace clndr.Api
         public Task<List<CalendarEventDto>> GetTodaysCalendarEvents(string officeId)
         {
             return AsyncCall<List<CalendarEventDto>>($"/office/{officeId}/calendarEvent", Method.GET);
+        }
+
+        public IRestResponse CreateCalendarEvent(string officeId, CalendarCreateDto calendarEvent)
+        {
+            var request = new RestRequest($"/office/{officeId}/calendarEvent", Method.POST);
+
+            request.RequestFormat = DataFormat.Json;
+            request.AddJsonBody(new {
+                startDay = calendarEvent.StartDay,
+                data = calendarEvent.Data,
+                type = calendarEvent.Type,
+                day = calendarEvent.Day,
+            });
+
+            var response = _client.Execute(request);
+
+            Console.WriteLine(response);
+
+            return response;
         }
     }
 }
